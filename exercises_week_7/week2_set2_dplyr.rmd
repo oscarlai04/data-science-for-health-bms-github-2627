@@ -1,0 +1,117 @@
+---
+title: "Week 02 - dplyr exercises"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 01: select
+
+Use [diamonds](https://ggplot2.tidyverse.org/reference/diamonds.html) example table from `ggplot2` package.
+
+Select only `price`, `cut`, and `color` columns. Use piping and `select`.
+
+```{r exercise 01-1}
+```
+
+Select only `price`, `cut`, and `color` columns. Use base R (no piping or select).
+
+```{r exercise 01-2}
+```
+
+Select all columns except for `x`, `y`, and `z`. Use negative selection and piping.
+
+```{r exercise 01-3}
+```
+
+Check out the help page for the `select()` function. Use `:` notation to select columns from `carat` till `clarity`.
+
+```{r exercise 01-4}
+```
+
+And now select these same columns by capitalising on the fact that all their names (and none of the others) start with the letter "c".
+
+```{r exercise 01-5}
+
+```
+
+BONUS: How would you select these 4 columns in base R, without simply listing their names?
+
+```{r exercise 01-6}
+
+```
+
+## Exercise 02: filter
+
+Use [msleep](https://ggplot2.tidyverse.org/reference/msleep.html) example table from `ggplot2` package.
+
+Filter the table to keep only `"domesticated"` animals (variable name is `conservation`).
+
+```{r exercise 02-1}
+```
+
+Filter the table to keep only the omnivores (`vore`) that sleep more than 10 hours in total.
+
+```{r exercise 02-2}
+```
+
+Filter the table to exclude animals with body weight above `50`.
+
+```{r exercise 02-3}
+```
+
+Filter the table to exclude animals with body weight below [median](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/median.html) body weight. Hint, you do not need a temporary variable.
+
+```{r exercise 02-4}
+```
+
+## Exercise 03: arrange
+
+Use [presidential](https://ggplot2.tidyverse.org/reference/presidential.html) example table from *ggplot2* package.
+
+Arrange the table by party.
+
+```{r exercise 03-1}
+
+```
+
+Arrange the table by start date in the descending order.
+
+```{r exercise 03-2}
+
+```
+
+Arrange the table by party (descending order) and president's name (ascending order).
+
+```{r exercise 03-3}
+
+```
+
+## Exercise 4: mutate
+
+Use [msleep](https://ggplot2.tidyverse.org/reference/msleep.html) example table from `ggplot2` package.
+
+Compute new variable / column with sleep to body weight ratio.
+
+```{r exercise 04-1}
+
+```
+
+Compute new variable / column `is_big` of logical value that are `TRUE` if body weight is above `50`.
+
+```{r exercise 04-2}
+
+```
+
+Compute three new variables / columns. First, compute the *mean* and *standard deviation* of total sleep variable. You will get the same value in all the rows, make sure that your columns are *not* called `mean` and `sd`. Then compute a z-score of the total sleep: $Z(x) = (x - mean(x)) / sd(x)$. Put all computations into a single mutate code.
+
+```{r exercise 04-3}
+```
+
+Compute z-score for body weight variable, do not store mean and standard deviation in extra columns but use them directly.
+
+```{r exercise 04-4}
+```
